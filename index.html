@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <header>
+        <div>
+            <p class="welcome">WELCOME BACK 👋</p>
+            <h1>My Tasks</h1>
+            <p class="subtitle">Stay organized. Get things done.</p>
+        </div>
+
+        <div class="date" id="date"></div>
+    </header>
+
+    <section class="stats">
+
+        <div class="stat-card">
+            <div class="icon blue">📋</div>
+            <div>
+                <span>Total Tasks</span>
+                <h2 id="totalTasks">0</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon green">✓</div>
+            <div>
+                <span>Completed</span>
+                <h2 id="completedTasks">0</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon orange">⏳</div>
+            <div>
+                <span>Pending</span>
+                <h2 id="pendingTasks">0</h2>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="main-card">
+
+        <div class="top-section">
+            <div>
+                <h2>Today's Tasks</h2>
+                <p>Manage your daily activities</p>
+            </div>
+
+            <div class="progress-box">
+                <span id="progressText">0% Complete</span>
+                <div class="progress">
+                    <div id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="What needs to be done?"
+            >
+            <button onclick="addTask()">+ Add Task</button>
+        </div>
+
+        <div class="tools">
+
+            <div class="filters">
+                <button class="filter active" onclick="setFilter('all', this)">
+                    All
+                </button>
+
+                <button class="filter" onclick="setFilter('active', this)">
+                    Active
+                </button>
+
+                <button class="filter" onclick="setFilter('completed', this)">
+                    Completed
+                </button>
+            </div>
+
+            <input
+                type="text"
+                id="searchInput"
+                class="search"
+                placeholder="🔍 Search..."
+                oninput="displayTasks()"
+            >
+
+        </div>
+
+        <div id="taskList"></div>
+
+        <div class="empty" id="emptyState">
+            <div>📝</div>
+            <h3>No tasks found</h3>
+            <p>Add a task and start being productive!</p>
+        </div>
+
+    </section>
+
+    <footer>
+        <span>TaskFlow</span> • Stay productive 🚀
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
